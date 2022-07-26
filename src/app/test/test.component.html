@@ -1,0 +1,5 @@
+<input type="text" [(ngModel)] = "username">
+
+<button [disabled]="username === ''" class="btn btn-primary" (click)="onUpdateUser()"> Add User </button>
+
+<p>{{usernameIS}}</p>
