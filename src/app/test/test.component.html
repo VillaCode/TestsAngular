@@ -1,5 +1,15 @@
 <input type="text" [(ngModel)] = "username">
 
-<button [disabled]="username === ''" class="btn btn-primary" (click)="onUpdateUser()"> Add User </button>
+<button *ngIf="username != ''" class="btn btn-primary" (click)="onUpdateUser()"> Add User </button>
 
 <p>{{usernameIS}}</p>
+
+<button (click)="toggleT(); addArray()">Display Details</button>
+<p [ngStyle]="{display: elToggle}">Secret Password tuna tuna <br></p>
+
+<p 
+    *ngFor="let time of times; let i = index"
+    [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'white'}"
+    [ngClass]="{'white-text': i >= 5}"
+    
+>{{time}} </p>

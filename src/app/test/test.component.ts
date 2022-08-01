@@ -9,17 +9,14 @@ import { FormsModule } from "@angular/forms";
 export class TestComponent implements OnInit {
 
   username = "Pancho"
-  usernameIS: String = "inicial";
+  usernameIS: string = "inicial";
   okei: boolean = true;
+  elToggle: string = "block";
+  times: string[] = [];
 
-  constructor() { 
+  constructor() {}
 
-
-
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onUpdateUser(){
  
@@ -29,5 +26,16 @@ export class TestComponent implements OnInit {
     this.username = "";
   }
 
+  toggleT(): void{
+    this.elToggle = this.elToggle == "block" ? "none" : "block";
+    console.log(this.elToggle);
+  }  
+  
+  addArray(): void{
+
+    let now = new Date()
+    this.times.push(now.toString());
+    console.log(this.times);
+  }
 
 }
